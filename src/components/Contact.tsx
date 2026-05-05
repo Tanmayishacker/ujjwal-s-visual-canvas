@@ -11,12 +11,18 @@ export function Contact() {
           <p className="font-grotesk text-white text-lg">EXAPHNNumber</p>
         </div>
         <div className="flex justify-center gap-12 mt-16">
-          {[Linkedin, Youtube, Instagram].map((Icon, i) => (
+          {[
+            { Icon: Linkedin, href: "https://www.linkedin.com/", label: "LinkedIn" },
+            { Icon: Youtube, href: "https://www.youtube.com/", label: "YouTube" },
+            { Icon: Instagram, href: "https://www.instagram.com/", label: "Instagram" },
+          ].map(({ Icon, href, label }) => (
             <a
-              key={i}
-              href="#"
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white transition-transform hover:scale-110 inline-block"
-              aria-label="social"
+              aria-label={label}
             >
               <Icon size={40} strokeWidth={1.5} />
             </a>
